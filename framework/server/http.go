@@ -89,3 +89,7 @@ func (hs HttpServer) Shutdown() {
 		log.Fatalf("http server forced to shutdown: %s", err)
 	}
 }
+
+func (hs HttpServer) GetRouterEngine() *gin.Engine {
+	return hs.handler
+}

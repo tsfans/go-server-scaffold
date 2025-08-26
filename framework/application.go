@@ -6,6 +6,7 @@ import (
 	"path/filepath"
 	"syscall"
 
+	"github.com/gin-gonic/gin"
 	"github.com/tsfans/go/framework/config"
 	"github.com/tsfans/go/framework/logger"
 	"github.com/tsfans/go/framework/server"
@@ -36,4 +37,16 @@ func Run() {
 		log.Infof("received exit signal: %s", sig.String())
 		app.httpServer.Shutdown()
 	}
+}
+
+func LoadRoute(loader func(c *gin.RouterGroup)) {
+	engine := app.httpServer.GetRouterEngine()
+	loader(&engine.RouterGroup)
+}
+
+func LoadServerRoute(loader func(c *gin.RouterGroup), version ...string) {
+	engine := app.httpServer.GetRouterEngine()
+	serverName := config.GetString("server.name", "go-server-scaffold")
+	prefix := config.GetString("web.route_prefix", serverName)
+	loader(engine.Group(prefix))
 }
