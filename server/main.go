@@ -1,6 +1,8 @@
 package main
 
-import "github.com/tsfans/go/framework"
+import (
+	"github.com/tsfans/go/framework"
+)
 
 func main() {
 

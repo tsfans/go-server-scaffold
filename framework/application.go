@@ -1,19 +1,21 @@
 package framework
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/tsfans/go/framework/server"
+)
 
 var (
 	app *Application
 )
 
 type Application struct {
-	WebServer *gin.Engine
+	httpServer *server.HttpServer
 }
 
 func init() {
-	app = &Application{WebServer: gin.New()}
+	app = &Application{httpServer: server.InitHttpServer()}
 }
 
 func Run() {
-	app.WebServer.Run("0.0.0.0:8080")
+	app.httpServer.Run()
 }
