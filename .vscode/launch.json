@@ -12,6 +12,11 @@
             "program": "${workspaceFolder}/server",
             "output": "${workspaceFolder}/bin/server",
             "cwd": "${workspaceFolder}/bin",
+            "env": {
+                "CONFIG_PATH": "./conf/server.yaml",
+                "CONFIG_AUTO_RELOAD": "true",
+                "CONFIG_RELOAD_INTERVAL": "5"
+            }
         }
     ]
 }

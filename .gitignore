@@ -29,7 +29,7 @@ go.work.sum
 bin/*
 !bin/conf
 bin/conf/*
-!bin/conf/*.sample
+!bin/conf/*.template
 
 # Editor/IDE
 .idea/

@@ -1,0 +1,15 @@
+debug: false
+server:
+  name: go-server-scaffold
+log:
+  path: logs
+  file: go-server-scaffold.log
+  level: debug
+web:
+  listen_host: 127.0.0.1
+  listen_port: 8080
+  route_prefix: 
+  trusted_proxies:
+  timeout:
+    read: 5
+    write: 30
