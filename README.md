@@ -12,6 +12,7 @@ A golang server scaffold for developing.
 git clone git@github.com:tsfans/go-server-scaffold.git
 cd go-server-scaffold
 go mod edit ${your-package}
+DOCKER_BUILDKIT=1 docker compose -f .docker/docker-compose.yaml up -d
 ```
 
 ## Project Structure

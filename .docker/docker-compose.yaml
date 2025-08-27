@@ -10,6 +10,15 @@ services:
       - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
+  go-server-scaffold:
+    build:
+      context: ..
+      dockerfile: .docker/Dockerfile
+    container_name: go-server-scaffold
+    depends_on:
+      - postgres
+    ports:
+      - "8080:8080"
 
 volumes:
   pgdata:
