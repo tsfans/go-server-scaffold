@@ -14,7 +14,7 @@ import (
 
 var (
 	config     *ConfigManger
-	log        = logger.GetLogger()
+	log        = logger.Get()
 	configlock sync.RWMutex
 )
 
@@ -116,6 +116,8 @@ func (cfg *ConfigManger) Get(key string) any {
 	return res
 }
 
+func Exists(key string) bool { return config.Get(key) != nil }
+
 func GetString(key string, defaultVal string) string {
 	if val := config.Get(key); val != nil {
 		if str, ok := val.(string); ok {
@@ -165,4 +167,8 @@ func GetArray[T any](key string, defaultVal []T) []T {
 		}
 	}
 	return defaultVal
+}
+
+func GetValue(key string) any {
+	return config.Get(key)
 }

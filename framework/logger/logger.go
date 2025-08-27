@@ -133,6 +133,6 @@ func parseLogLevel(level string) logrus.Level {
 	}
 }
 
-func GetLogger() *Logger {
+func Get() *Logger {
 	return logger
 }

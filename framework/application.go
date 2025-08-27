@@ -14,7 +14,7 @@ import (
 
 var (
 	app *Application
-	log = logger.GetLogger()
+	log = logger.Get()
 )
 
 type Application struct {

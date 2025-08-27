@@ -13,7 +13,7 @@ import (
 
 var (
 	httpServer *HttpServer
-	log        = logger.GetLogger()
+	log        = logger.Get()
 )
 
 type HttpServer struct {

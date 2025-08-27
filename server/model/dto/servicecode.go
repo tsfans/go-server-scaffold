@@ -1,0 +1,11 @@
+package dto
+
+const (
+	SC_SUCCESS           = 200
+	SC_INVALID_PARAMETER = 400
+	SC_INTERNAL_ERROR    = 500
+
+	SC_DB_ERROR = 1001
+
+	SC_USER_NOT_FOUND = 1001
+)
