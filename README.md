@@ -11,8 +11,8 @@ A golang server scaffold for developing.
 ```shell
 git clone git@github.com:tsfans/go-server-scaffold.git
 cd go-server-scaffold
-go mod edit ${your-package}
-DOCKER_BUILDKIT=1 docker compose -f .docker/docker-compose.yaml up -d
+git submodule update --init --recursive
+DOCKER_BUILDKIT=1 docker compose -f .docker/docker-compose.yaml up -d --build
 ```
 
 ## Project Structure
@@ -20,15 +20,10 @@ DOCKER_BUILDKIT=1 docker compose -f .docker/docker-compose.yaml up -d
 - .docker // docker files
 - .vscode // ide settings
 - bin
-  - conf // local config file
-- framework
-  - config // load yaml config
-  - database // database operation
-  - logger // log operation
-  - server // http server
-  - utils // utils
+  - conf // yaml config template, rename to yaml to local debug
 - server
   - controller // api entry
   - service // business logic
   - repository // database operation
   - model // business model
+- [framework](https://github.com/tsfans/go-framework) // git submodule: a golang framework for developing server.

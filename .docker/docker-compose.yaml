@@ -1,7 +1,7 @@
 services:
   postgres:
     image: postgres:16
-    container_name: my-postgres
+    container_name: postgres-16
     environment:
       POSTGRES_USER: root
       POSTGRES_PASSWORD: 123456
@@ -14,7 +14,7 @@ services:
     build:
       context: ..
       dockerfile: .docker/Dockerfile
-    container_name: go-server-scaffold
+    container_name: server
     depends_on:
       - postgres
     ports:
